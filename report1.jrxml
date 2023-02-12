@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="81dd3159-ecab-4023-a143-607adca206bd">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fd" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="td" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     sold.`sold_id` AS sold_sold_id,
+     sold.`date` AS sold_date,
+     sold.`sold_name` AS sold_sold_name,
+     sold.`sold_box` AS sold_sold_box,
+     sold.`sold_pac` AS sold_sold_pac,
+     sold.`sold_tot` AS sold_sold_tot,
+     sold.`tot_profit` AS sold_tot_profit
+FROM
+     `sold` sold where sold.`date` between  $P{fd} and  $P{td}]]>
+	</queryString>
+	<field name="sold_sold_id" class="java.lang.Integer"/>
+	<field name="sold_date" class="java.lang.String"/>
+	<field name="sold_sold_name" class="java.lang.String"/>
+	<field name="sold_sold_box" class="java.lang.Integer"/>
+	<field name="sold_sold_pac" class="java.lang.Integer"/>
+	<field name="sold_sold_tot" class="java.lang.Integer"/>
+	<field name="sold_tot_profit" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="34" uuid="5b9b17fd-3362-4f95-a2a1-58c7b2feccdc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT" size="26" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ladiyon Enterprises]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="82" width="555" height="1" uuid="2e4367fc-96ee-468a-b51a-a514e5df3b20"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="37" width="34" height="20" uuid="f0ebcd61-d96a-4264-9e55-4e6639be8b3c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT" size="10"/>
+				</textElement>
+				<text><![CDATA[from :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="34" height="20" uuid="c2d14ba2-d910-43fa-a7fe-a97f17153ef4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<text><![CDATA[to     :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="34" y="37" width="111" height="20" uuid="ca4342fc-106d-45b6-90d1-0ae055eddce8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="57" width="111" height="20" uuid="4fe69c72-3b2e-4067-8b0f-4ab609a65f4d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{td}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="20" uuid="642ef906-81ac-4d30-824d-7578c754a054"/>
+				<textElement>
+					<font fontName="Perpetua Titling MT" size="12"/>
+				</textElement>
+				<text><![CDATA[description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="0" width="81" height="20" uuid="4e207ecd-15df-453a-b4cd-6a0fd1a0f09a"/>
+				<textElement>
+					<font fontName="Perpetua Titling MT" size="12"/>
+				</textElement>
+				<text><![CDATA[sold box]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="81" height="20" uuid="ad592a47-5ff7-495b-9f06-ad4c7413e59f"/>
+				<textElement>
+					<font fontName="Perpetua Titling MT" size="12"/>
+				</textElement>
+				<text><![CDATA[sold packet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="0" width="81" height="20" uuid="0259a434-8352-445e-b40e-be2e5cabd211"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT" size="12"/>
+				</textElement>
+				<text><![CDATA[profit]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="2cacec51-a1b9-4150-bea9-bb2fa2f9fd25"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="372" y="0" width="93" height="20" uuid="07a32495-a5e9-4b8d-a41c-11f828527d7d"/>
+				<textElement>
+					<font fontName="Perpetua Titling MT" size="12"/>
+				</textElement>
+				<text><![CDATA[sold total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="134" height="15" uuid="74f29dfb-6834-4c9f-859b-bc9ebe026f2d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sold_sold_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="2" width="100" height="15" uuid="8018e2de-e512-418c-a114-6e612d5e796f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sold_sold_box}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="2" width="81" height="15" uuid="e337fb62-e845-44bc-8ff6-dbfaf068721a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sold_sold_pac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="2" width="81" height="15" uuid="86732e91-ce00-415c-b02c-191fd2a79f49"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sold_sold_tot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="2" width="81" height="15" uuid="f4e8c18c-f8e3-41e6-a797-955d21b9f775"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Perpetua Titling MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sold_tot_profit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="4a87eb62-7ad5-4d35-9f49-210566dd09a9"/>
+			</line>
+			<staticText>
+				<reportElement x="443" y="3" width="112" height="20" uuid="33cdd49c-d308-4ac2-bcee-dc7b4dffbb17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Segoe UI Light" size="8"/>
+				</textElement>
+				<text><![CDATA[Copyrights© by CIOA production]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="23" width="123" height="17" uuid="d1641fb8-9209-483d-85e8-b350604725a7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<text><![CDATA[lahiruthraka97@gmail.com]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
